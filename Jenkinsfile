@@ -8,6 +8,6 @@ node() {
 		sh "sudo ${mvnHome}/bin/mvn clean install "
 	stage 'Docker Build'
 		sh "sudo docker build -t emcdevops/tnt-utilities ."
-	stagr 'Docker Run'
+	stage 'Docker Run'
 		sh "sudo docker run emcdevops/tnt-utilities"
 }
