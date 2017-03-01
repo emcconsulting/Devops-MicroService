@@ -7,9 +7,11 @@ node() {
 		//sh "sudo rm -rf target"
 		sh "sudo ${mvnHome}/bin/mvn clean package "
 	stage 'Sonar Validation'	
-    	sh "sudo ${mvnHome}/bin/mvn sonar:sonar"
+    	sh "sudo ${mvnHome}/bin/mvn sonar:sonar -Dsonar.host.url=http://192.168.33.80:9000"
 	stage 'Docker Build'
 		sh "sudo docker build -t emcdevops/tnt-utilities ."
 	stage 'Docker Run'
+	    sh"sudo docker stop $(docker ps -a -q)"
+		sh "sudo docker rm $(docker ps -a -q)"
 		sh "sudo docker run -p 9091:9091  emcdevops/tnt-utilities -d &"
 }
