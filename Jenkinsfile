@@ -6,6 +6,8 @@ node() {
     stage 'Maven Build'
 		//sh "sudo rm -rf target"
 		sh "sudo ${mvnHome}/bin/mvn clean package "
+	stage 'Sonar Validation'	
+    	sh "sudo ${mvnHome}/bin/mvn sonar:sonar"
 	stage 'Docker Build'
 		sh "sudo docker build -t emcdevops/tnt-utilities ."
 	stage 'Docker Run'
