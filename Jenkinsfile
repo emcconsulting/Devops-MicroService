@@ -9,5 +9,5 @@ node() {
 	stage 'Docker Build'
 		sh "sudo docker build -t emcdevops/tnt-utilities ."
 	stage 'Docker Run'
-		sh "sudo docker run -p 9091:9091  emcdevops/tnt-utilities -d"
+		sh "sudo docker run -p 9091:9091  emcdevops/tnt-utilities -d &"
 }
