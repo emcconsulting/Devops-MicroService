@@ -1,4 +1,4 @@
-package com.emc.ps.appmod.tnt.utilities.config;
+/*package com.emc.ps.appmod.tnt.utilities.config;
 
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudFactory;
@@ -23,4 +23,4 @@ public class CloudConfig {
 		return cloud().getApplicationInstanceInfo();
 	}
 
-}
+}*/
