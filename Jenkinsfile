@@ -5,7 +5,7 @@ node() {
         def mvnHome = tool 'M3'
     stage 'Maven Build'
 		//sh "sudo rm -rf target"
-		sh "sudo ${mvnHome}/bin/mvn clean package "
+		sh "sudo ${mvnHome}/bin/mvn -q clean package "
 	stage 'Sonar Validation'	
     	sh "sudo ${mvnHome}/bin/mvn sonar:sonar -Dsonar.host.url=http://192.168.33.80:9000"
 	stage 'Docker Build'
