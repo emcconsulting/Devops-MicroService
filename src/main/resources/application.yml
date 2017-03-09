@@ -2,9 +2,21 @@ server:
   port: 9091
 
 spring:
+  datasource:
+    url: jdbc:hsqldb:mem:tnt_utilities
+    username: tnt
+    password: tnt
+    driver-class-name: org.hsqldb.jdbcDriver
+    schema: classpath:db/hsqldb/schema.sql
+    data: classpath:db/hsqldb/data.sql
+
+
      
   jpa:
     hibernate:
       naming:
         strategy: SpringPhysicalNamingStrategy
-    database: H2
+      ddl-auto: none
+    database: HSQL
+    show-sql: true
+ 
