@@ -13,5 +13,5 @@ node() {
 	stage 'Docker Run'
 	    sh"sudo docker stop \$(sudo docker ps -a -q)"
 		sh "sudo docker rm \$(sudo docker ps -a -q)"
-		sh "sudo docker run -p 9091:9091  emcdevops/tnt-utilities -d &"
+		sh "sudo docker run -p 9092:9092  emcdevops/tnt-utilities -d &"
 }
