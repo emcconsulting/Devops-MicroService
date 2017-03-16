@@ -19,7 +19,7 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 	
     <!-- Common settings -->
-    <!-- <context:property-placeholder location="classpath:citrus.properties"/> -->
+    <context:property-placeholder location="classpath:citrus.properties"/>
 
     <citrus:schema-repository id="schemaRepository"/>
 
