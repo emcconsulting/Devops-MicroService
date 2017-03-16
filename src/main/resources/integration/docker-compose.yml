@@ -16,7 +16,7 @@ services:
     
   
   intg-test: 
-    image: emcdevops/tnt-utilities-it:v_local     
+    image: emcdevops/tnt-utilities-it   
     depends_on:
       - backend      
     networks:
