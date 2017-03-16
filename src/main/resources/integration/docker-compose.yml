@@ -1,0 +1,25 @@
+version: '2'
+
+
+networks:
+    my-net:
+      driver: bridge    
+
+services:
+  backend: 
+    image: emcdevops/tnt-utilities
+    ports: 
+      - "9091"      
+    restart: always
+    networks:
+      - my-net      
+    
+  
+  intg-test: 
+    image: emcdevops/tnt-utilities-it:v_local     
+    depends_on:
+      - backend      
+    networks:
+      - my-net  
+    entrypoint: sh wait.sh backend 9091 
+    container_name: intg-test-cont

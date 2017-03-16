@@ -70,16 +70,16 @@ public class BookServiceImpl implements BookService {
 		BookEntity bookEntity = new BookEntity();
 		Date today = new Date();
 		bookEntity.setAuthor(book.getAuthor());
-		bookEntity.setDepartmentId(book.getDepartmentId());
+		//bookEntity.setDepartmentId(book.getDepartmentId());
 		bookEntity.setIsbn(book.getISBN());
 		bookEntity.setName(book.getName());
-		bookEntity.setOwnerId(book.getOwnerId());
+		//bookEntity.setOwnerId(book.getOwnerId());
 		bookEntity.setPrice(book.getPrice());
-		bookEntity.setPurchaseDate(book.getPurchaseDate());
+		//bookEntity.setPurchaseDate(book.getPurchaseDate());
 		bookEntity.setUpdateDate(today);
 		bookEntity.setInsertDate(today);
-		bookEntity.setUrl(book.getURL());
-		bookEntity.setUserId(book.getLentToUserId());
+		//bookEntity.setUrl(book.getURL());
+		//bookEntity.setUserId(book.getLentToUserId());
 
 		bookEntity = bookDao.save(bookEntity);
 		return convertToDomain(bookEntity);
@@ -90,15 +90,15 @@ public class BookServiceImpl implements BookService {
 		BookEntity bookEntity = bookDao.findOne(book.getId());
 		Date today = new Date();
 		bookEntity.setAuthor(book.getAuthor());
-		bookEntity.setDepartmentId(book.getDepartmentId());
+		//bookEntity.setDepartmentId(book.getDepartmentId());
 		bookEntity.setIsbn(book.getISBN());
 		bookEntity.setName(book.getName());
-		bookEntity.setOwnerId(book.getOwnerId());
+		//bookEntity.setOwnerId(book.getOwnerId());
 		bookEntity.setPrice(book.getPrice());
-		bookEntity.setPurchaseDate(book.getPurchaseDate());
+		//bookEntity.setPurchaseDate(book.getPurchaseDate());
 		bookEntity.setUpdateDate(today);
-		bookEntity.setUrl(book.getURL());
-		bookEntity.setUserId(book.getLentToUserId());
+		//bookEntity.setUrl(book.getURL());
+		//bookEntity.setUserId(book.getLentToUserId());
 
 		bookEntity = bookDao.save(bookEntity);
 		return convertToDomain(bookEntity);
@@ -138,17 +138,17 @@ public class BookServiceImpl implements BookService {
 	private Book convertToDomain(BookEntity bookEntity) {
 		Book book = new Book();
 		book.setAuthor(bookEntity.getAuthor());
-		book.setDepartmentId(bookEntity.getDepartmentId());
+		//book.setDepartmentId(bookEntity.getDepartmentId());
 		book.setId(bookEntity.getId());
-		book.setInsertDate(bookEntity.getInsertDate());
+		//book.setInsertDate(bookEntity.getInsertDate());
 		book.setISBN(bookEntity.getIsbn());
-		book.setLentToUserId(bookEntity.getUserId());
+		//book.setLentToUserId(bookEntity.getUserId());
 		book.setName(bookEntity.getName());
-		book.setOwnerId(bookEntity.getOwnerId());
+		//book.setOwnerId(bookEntity.getOwnerId());
 		book.setPrice(bookEntity.getPrice());
-		book.setPurchaseDate(bookEntity.getPurchaseDate());
-		book.setUpdateDate(bookEntity.getUpdateDate());
-		book.setURL(bookEntity.getUrl());
+		//book.setPurchaseDate(bookEntity.getPurchaseDate());
+		//book.setUpdateDate(bookEntity.getUpdateDate());
+		//book.setURL(bookEntity.getUrl());
 		return book;
 	}
 

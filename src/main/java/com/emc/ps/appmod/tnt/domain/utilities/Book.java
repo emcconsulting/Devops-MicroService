@@ -18,22 +18,7 @@ public class Book implements Serializable {
 
 	private String ISBN;
 
-	private String URL;
-
 	private BigDecimal price;
-
-	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date purchaseDate;
-
-	private Integer ownerId;
-
-	private Integer departmentId;
-
-	private Date insertDate;
-
-	private Date updateDate;
-
-	private Integer lentToUserId;
 
 	public Long getId() {
 		return id;
@@ -67,13 +52,6 @@ public class Book implements Serializable {
 		ISBN = iSBN;
 	}
 
-	public String getURL() {
-		return URL;
-	}
-
-	public void setURL(String uRL) {
-		URL = uRL;
-	}
 
 	public BigDecimal getPrice() {
 		return price;
@@ -83,53 +61,4 @@ public class Book implements Serializable {
 		this.price = price;
 	}
 
-
-	public Date getPurchaseDate() {
-		return purchaseDate;
-	}
-
-
-	public void setPurchaseDate(Date purchaseDate) {
-		this.purchaseDate = purchaseDate;
-	}
-
-	public Integer getOwnerId() {
-		return ownerId;
-	}
-
-	public void setOwnerId(Integer ownerId) {
-		this.ownerId = ownerId;
-	}
-
-	public Integer getDepartmentId() {
-		return departmentId;
-	}
-
-	public void setDepartmentId(Integer departmentId) {
-		this.departmentId = departmentId;
-	}
-
-	public Date getInsertDate() {
-		return insertDate;
-	}
-
-	public void setInsertDate(Date insertDate) {
-		this.insertDate = insertDate;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	public Integer getLentToUserId() {
-		return lentToUserId;
-	}
-
-	public void setLentToUserId(Integer lentToUserId) {
-		this.lentToUserId = lentToUserId;
-	}
 }
