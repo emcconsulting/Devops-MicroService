@@ -28,15 +28,15 @@ node() {
 		
 		publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/test-output/citrus-reports',
 		 reportFiles: 'citrus-test-results.html', reportName: 'citrus integration test report '])
+	
+	
+        stage 'JMeter Performance Tests'
+	    sh "sudo /home/vagrant/jmeter/apache-jmeter-3.1/bin/jmeter -n -JEnvURL=192.168.33.80 -JPrtNum=9091  -Jusers=7  -JsuppressJMeterOutput=false -JjmeterLogLevel=DEBUG -Jmeter.save.saveservice.output_format=xml  -t '/var/lib/jenkins/workspace/tnt-utilities-int-test/src/test/jmeter/DevopsJmeter.jmx' -l '/var/lib/jenkins/workspace/tnt-utilities-int-test/target/jmeter/devops_jmeter_result.jtl' "
 		
 	stage 'Docker Run'
 	    sh"sudo docker stop \$(sudo docker ps -a -q)"
 		sh "sudo docker rm \$(sudo docker ps -a -q)"
 		sh "sudo docker run -p 9091:9091  emcdevops/tnt-utilities -d &"
-
-
-        stage 'JMeter Performance Tests'
-	    sh "sudo /home/vagrant/jmeter/apache-jmeter-3.1/bin/jmeter -n -JEnvURL=192.168.33.80 -JPrtNum=9091  -Jusers=7  -JsuppressJMeterOutput=false -JjmeterLogLevel=DEBUG -Jmeter.save.saveservice.output_format=xml  -t '/var/lib/jenkins/workspace/tnt-utilities-int-test/src/test/jmeter/DevopsJmeter.jmx' -l '/var/lib/jenkins/workspace/tnt-utilities-int-test/target/jmeter/devops_jmeter_result.jtl' "
 	 
 	
 }
