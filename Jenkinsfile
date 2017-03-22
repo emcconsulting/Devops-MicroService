@@ -2,17 +2,22 @@ node() {
 	   
     stage 'Checkout'
         git url: 'https://github.com/emcconsulting/Devops-MicroService.git', branch: 'int-test'
+        
     stage 'Maven Build'
 		sh "sudo mvn -q clean package "
+		
 	stage 'Sonar Validation'	
     	sh "sudo mvn sonar:sonar -Dsonar.host.url=http://192.168.33.80:9000"
+    	
 	stage 'Docker Build'
 		sh "sudo docker build -t emcdevops/tnt-utilities ."
+		
 	stage 'integration testing'
 		dir('tnt-utilities.it') {
 		sh "sudo mvn clean install -DskipTests"
 		sh "sudo docker build -t emcdevops/tnt-utilities-it ."
         }
+        
         dir('src/main/resources/integration'){
         sh "sudo docker-compose up --abort-on-container-exit"
 		sh "sudo docker cp intg-test-cont:test-output ../../../../target/test-output"
