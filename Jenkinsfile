@@ -39,7 +39,7 @@ node() {
 	stage 'JMeter Performance Tests'
 	    sh "sudo /home/vagrant/jmeter/apache-jmeter-3.1/bin/jmeter -n -JEnvURL=192.168.33.80 -JPrtNum=9091  -Jusers=7  -JsuppressJMeterOutput=false -JjmeterLogLevel=DEBUG -Jmeter.save.saveservice.output_format=xml  -t '/var/lib/jenkins/workspace/tnt-utilities-int-test/src/test/jmeter/DevopsJmeter.jmx' -l '/var/lib/jenkins/workspace/tnt-utilities-int-test/target/jmeter/devops_jmeter_result.jtl' "
 	    step([$class:'ArtifactArchiver',artifacts:'**/target/jmeter/*.jtl',fingerprint:true]) 
-	    performanceReport compareBuildPrevious: false, configType: 'ART', errorFailedThreshold: 30, errorUnstableResponseTimeThreshold: '', errorUnstableThreshold: 50, failBuildIfNoResultFile: false, modeEvaluation: true, modeOfThreshold: false, modePerformancePerTestCase: true, modeThroughput: true, nthBuildNumber: 0, parsers: [[$class: 'JMeterParser', glob: '**/target/jmeter/*.jtl']], relativeFailedThresholdNegative: 0.0, relativeFailedThresholdPositive: 0.0, relativeUnstableThresholdNegative: 0.0, relativeUnstableThresholdPositive: 0.0
+	    performanceReport compareBuildPrevious: false, configType: 'ART', errorFailedThreshold: 100, errorUnstableResponseTimeThreshold: '', errorUnstableThreshold: 100, failBuildIfNoResultFile: false, modeEvaluation: true, modeOfThreshold: false, modePerformancePerTestCase: true, modeThroughput: true, nthBuildNumber: 0, parsers: [[$class: 'JMeterParser', glob: '**/target/jmeter/*.jtl']], relativeFailedThresholdNegative: 0.0, relativeFailedThresholdPositive: 0.0, relativeUnstableThresholdNegative: 0.0, relativeUnstableThresholdPositive: 0.0
 	 
 	
 }
