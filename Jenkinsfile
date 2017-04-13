@@ -1,13 +1,13 @@
 node() {
 	   
     stage 'Checkout'
-        git url: 'https://github.com/emcconsulting/Devops-MicroService.git', branch: 'int-test'
+        git url: 'https://github.com/emcconsulting/Devops-MicroService.git', branch: 'lab'
         
     stage 'Maven Build'
 		sh "sudo mvn -q clean package "
 		
 	stage 'Sonar Validation'	
-    	sh "sudo mvn sonar:sonar -Dsonar.host.url=http://192.168.33.80:9000"
+    	sh "sudo mvn sonar:sonar -Dsonar.host.url=http://10.63.37.100:9000"
     	
 	stage 'Docker Build'
 		sh "sudo docker build -t emcdevops/tnt-utilities ."
