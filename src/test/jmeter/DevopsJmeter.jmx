@@ -9,7 +9,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="site" elementType="Argument">
             <stringProp name="Argument.name">site</stringProp>
-            <stringProp name="Argument.value">192.168.33.80:9091</stringProp>
+            <stringProp name="Argument.value">10.63.39.117:9091</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
