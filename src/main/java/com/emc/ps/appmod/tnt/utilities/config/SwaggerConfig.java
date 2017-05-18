@@ -16,12 +16,12 @@ public class SwaggerConfig {
 
 	@Bean
 	public Docket newsApi() {
-		return new Docket(DocumentationType.SWAGGER_2).groupName("TNT").apiInfo(apiInfo()).select()
-				.paths(regex("/.*")).build();
+		return new Docket(DocumentationType.SWAGGER_2).groupName("TNT").apiInfo(apiInfo()).select().paths(regex("/.*"))
+				.build();
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Web V5.0").description("Web V5.0").termsOfServiceUrl("")
-				.contact("").license("Apache License Version 3.0").licenseUrl("").version("3.0").build();
+		return new ApiInfoBuilder().title("Web V5.1").description("Web V5.1").termsOfServiceUrl("").contact("")
+				.license("Apache License Version 3.0").licenseUrl("").version("3.0").build();
 	}
 }

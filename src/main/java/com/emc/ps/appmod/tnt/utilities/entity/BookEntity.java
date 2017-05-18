@@ -26,34 +26,34 @@ public class BookEntity implements Serializable {
 
 	private String author;
 
-	@Column(name="department_id")
+	@Column(name = "department_id")
 	private int departmentId;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="insert_date")
+	@Column(name = "insert_date")
 	private Date insertDate;
 
 	private String isbn;
 
 	private String name;
 
-	@Column(name="owner_id")
+	@Column(name = "owner_id")
 	private int ownerId;
 
 	private BigDecimal price;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Column(name="purchase_date")
+	@Column(name = "purchase_date")
 	private Date purchaseDate;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="update_date")
+	@Column(name = "update_date")
 	private Date updateDate;
 
 	private String url;
 
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	private int userId;
 
 	public BookEntity() {

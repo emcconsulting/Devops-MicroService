@@ -23,21 +23,21 @@ public class Application {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@RequestMapping(value = "/appInfo", method = RequestMethod.GET)
 	public String bookInfo() {
 		return "Utilities Microservice is running!";
 	}
-	
-	/*@Primary
-	@Bean
-	public RemoteTokenServices tokenService() {
-	    RemoteTokenServices tokenService = new RemoteTokenServices();
-	    tokenService.setCheckTokenEndpointUrl(
-	      "http://tnt-auth-server-oauth.cfapps.io/uaa/oauth/check_token");
-	    tokenService.setClientId("client");
-	    tokenService.setClientSecret("secret");
-	    return tokenService;
-	}*/
+
+	/*
+	 * @Primary
+	 * 
+	 * @Bean public RemoteTokenServices tokenService() { RemoteTokenServices
+	 * tokenService = new RemoteTokenServices();
+	 * tokenService.setCheckTokenEndpointUrl(
+	 * "http://tnt-auth-server-oauth.cfapps.io/uaa/oauth/check_token");
+	 * tokenService.setClientId("client");
+	 * tokenService.setClientSecret("secret"); return tokenService; }
+	 */
 
 }

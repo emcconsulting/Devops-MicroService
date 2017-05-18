@@ -12,11 +12,11 @@ public interface BookService {
 	public Book getBookDetail(Long bookId);
 
 	public Book createBook(Book book);
-	
+
 	public Book updateBook(Book book);
 
 	public void deleteBook(Long bookId);
-	
+
 	public List<Book> searchBook(BookSearch booksearch);
 
 }

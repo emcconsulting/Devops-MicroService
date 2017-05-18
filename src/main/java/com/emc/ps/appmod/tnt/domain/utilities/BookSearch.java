@@ -20,10 +20,10 @@ public class BookSearch implements Serializable {
 
 	private BigDecimal price;
 
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date fromPurchaseDate;
 
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date toPurchaseDate;
 
 	public String getName() {

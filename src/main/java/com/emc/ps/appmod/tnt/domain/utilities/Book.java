@@ -52,7 +52,6 @@ public class Book implements Serializable {
 		ISBN = iSBN;
 	}
 
-
 	public BigDecimal getPrice() {
 		return price;
 	}

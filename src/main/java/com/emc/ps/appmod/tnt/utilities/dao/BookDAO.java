@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.emc.ps.appmod.tnt.utilities.entity.BookEntity;
 
 @Transactional
-public interface BookDAO extends CrudRepository<BookEntity, Long>, JpaSpecificationExecutor<BookEntity>  {
+public interface BookDAO extends CrudRepository<BookEntity, Long>, JpaSpecificationExecutor<BookEntity> {
 
 }
