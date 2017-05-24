@@ -38,6 +38,13 @@ public class BookController {
 		//return CommonUtils.buildSuccessResponse(message);
 		return CommonUtils.buildSuccessResponse("New MS!!!");
 	}
+	
+	@ApiOperation("version for book miroservice")
+	@RequestMapping(value = "/version", method = RequestMethod.GET)
+	public ResponseObject apiVersion() {
+		//return CommonUtils.buildSuccessResponse(message);
+		return CommonUtils.buildSuccessResponse("V2.0");
+	}
 
 	@ApiOperation("Lists all the books")
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
