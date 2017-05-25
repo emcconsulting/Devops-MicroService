@@ -43,7 +43,7 @@ public class BookController {
 	@RequestMapping(value = "/version", method = RequestMethod.GET)
 	public ResponseObject apiVersion() {
 		//return CommonUtils.buildSuccessResponse(message);
-		return CommonUtils.buildSuccessResponse("V3.0");
+		return CommonUtils.buildSuccessResponse("V4.0");
 	}
 
 	@ApiOperation("Lists all the books")
