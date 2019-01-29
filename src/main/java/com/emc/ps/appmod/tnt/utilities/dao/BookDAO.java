@@ -2,11 +2,12 @@ package com.emc.ps.appmod.tnt.utilities.dao;
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.emc.ps.appmod.tnt.utilities.entity.BookEntity;
 
-@Transactional
+@Repository
 public interface BookDAO extends CrudRepository<BookEntity, Long>, JpaSpecificationExecutor<BookEntity>  {
 
 }
