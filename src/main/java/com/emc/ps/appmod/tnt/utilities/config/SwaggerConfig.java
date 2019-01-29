@@ -10,6 +10,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -21,7 +22,7 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Web V4.3").description("Web V4.3").termsOfServiceUrl("")
+		return new ApiInfoBuilder().title("Web V4.5").description("Web V4.5").termsOfServiceUrl("")
 				.contact("").license("Apache License Version 3.0").licenseUrl("").version("3.0").build();
 	}
 }
